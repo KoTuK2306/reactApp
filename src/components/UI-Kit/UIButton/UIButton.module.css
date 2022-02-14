@@ -1,20 +1,65 @@
 @import url("../../../colors.css");
 
-.button {
+:root {
+  --fontSize: 15px;
+}
+
+.standart {
   width: 100px;
   height: 40px;
   border: none;
-  font-size: 15px;
+  font-size: var(--fontSize);
   color: var(--mainColor);
   background-color: var(--primaryColor);
-  border-radius: 15px;
+  border-radius: 10px;
   transition: all 0.2s;
+  cursor: pointer;
+  outline: none;
 }
 
-.button:hover {
+.text {
+  width: 100px;
+  height: 40px;
+  border: none;
+  font-size: var(--fontSize);
+  color: var(--primaryColor);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  transition: all 0.2s;
+  cursor: pointer;
+  outline: none;
+}
+
+.bordered {
+  width: 100px;
+  height: 40px;
+  border: 2px solid var(--primaryColor);
+  font-size: var(--fontSize);
+  color: var(--primaryColor);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  transition: all 0.2s;
+  cursor: pointer;
+  outline: none;
+}
+
+.standart:hover {
   background-color: var(--darkerPrimaryColor);
 }
 
-.button:active {
+.text:hover {
+  color: var(--mainColor);
+  background-color: var(--darkerPrimaryColor);
+}
+
+.bordered:hover {
+  color: var(--mainColor);
+  border: none;
+  background-color: var(--darkerPrimaryColor);
+}
+
+.standart:active,
+.text:active,
+.bordered:active {
   background-color: var(--clickColor);
 }
