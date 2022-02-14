@@ -1,0 +1,79 @@
+:root {
+  --mainColor: #222226;
+  --primaryColor: #e299ff;
+  --darkerPrimaryColor: #d66eff;
+  --clickColor: #ab58cc;
+  --buttonHoverColor: #e9b5fd;
+  --buttonActiveColor: #7e7e7e;
+  --buttonActiveTextColor: #e6e6e6;
+}
+
+:root {
+  --fontSize: 15px;
+}
+
+.UIButton_standart__rdT3C {
+  width: 100px;
+  height: 40px;
+  border: none;
+  font-size: 15px;
+  font-size: var(--fontSize);
+  color: var(--mainColor);
+  background-color: var(--primaryColor);
+  border-radius: 10px;
+  transition: all 0.2s;
+  cursor: pointer;
+  outline: none;
+}
+
+.UIButton_text__7NTIH {
+  width: 100px;
+  height: 40px;
+  border: none;
+  font-size: 15px;
+  font-size: var(--fontSize);
+  color: var(--primaryColor);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  transition: all 0.2s;
+  cursor: pointer;
+  outline: none;
+}
+
+.UIButton_bordered__zzbCY {
+  width: 100px;
+  height: 40px;
+  border: 2px solid var(--primaryColor);
+  font-size: 15px;
+  font-size: var(--fontSize);
+  color: var(--primaryColor);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  transition: all 0.2s;
+  cursor: pointer;
+  outline: none;
+}
+
+.UIButton_standart__rdT3C:hover {
+  background-color: var(--darkerPrimaryColor);
+}
+
+.UIButton_text__7NTIH:hover {
+  color: var(--mainColor);
+  background-color: var(--darkerPrimaryColor);
+}
+
+.UIButton_bordered__zzbCY:hover {
+  color: var(--mainColor);
+  border: none;
+  background-color: var(--darkerPrimaryColor);
+}
+
+.UIButton_standart__rdT3C:active,
+.UIButton_text__7NTIH:active,
+.UIButton_bordered__zzbCY:active {
+  background-color: var(--clickColor);
+}
+
+
+/*# sourceMappingURL=main.623b595e.css.map*/
