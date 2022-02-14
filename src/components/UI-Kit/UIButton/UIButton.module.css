@@ -1,0 +1,20 @@
+@import url("../../../colors.css");
+
+.button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  font-size: 15px;
+  color: var(--mainColor);
+  background-color: var(--primaryColor);
+  border-radius: 15px;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background-color: var(--darkerPrimaryColor);
+}
+
+.button:active {
+  background-color: var(--clickColor);
+}
