@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 //import classes from "./UIButton.module.css";
 
-export const Button = ({ label, backgroundColor = "red", size = "md", onClick }) => {
+export const Button = ({ children, backgroundColor = "red", size = "md", onClick }) => {
   let scale = 1;
   if (size === "sm") scale = 0.75;
   if (size === "lg") scale = 1.5;
@@ -14,14 +14,14 @@ export const Button = ({ label, backgroundColor = "red", size = "md", onClick })
 
   return (
     <button onClick={onClick} style={style}>
-      {label}
+      {children}
     </button>
   );
 };
 
 Button.propTypes = {
-  label: PropTypes.string,
+  children: PropTypes.any.isRequired,
   backgroundColor: PropTypes.string,
   size: PropTypes.oneOf(["sm", "md", "lg"]),
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
 };

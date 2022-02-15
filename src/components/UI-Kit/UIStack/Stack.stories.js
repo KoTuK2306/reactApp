@@ -1,4 +1,4 @@
-import { Stack } from "../components/UI-Kit/index";
+import { Stack } from "./index";
 
 export default {
   title: "Components/Stack",
