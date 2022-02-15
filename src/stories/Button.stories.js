@@ -1,10 +1,22 @@
-import { UIButton } from "../components/UI-Kit/UIButton";
+import { Button } from "../components/UI-Kit/index";
 
 export default {
-  title: "Button",
-  component: UIButton,
+  title: "Components/Button",
+  component: Button,
 };
 
-export const Standart = () => <UIButton text="Standart" variant="standart" />;
-export const Text = () => <UIButton text="Text" variant="text" />;
-export const Bordered = () => <UIButton text="Bordered" variant="bordered" />;
+const Template = (args) => <Button {...args} />;
+
+export const Red = Template.bind({});
+Red.args = {
+  backgroundColor: "red",
+  label: "Button",
+  size: "md",
+};
+
+export const Purple = Template.bind({});
+Purple.args = {
+  backgroundColor: "purple",
+  label: "Button",
+  size: "md",
+};
