@@ -11,6 +11,7 @@ export const Stack = ({ children, spacing = 2, direction = "row", wrap = false }
 };
 
 Stack.propTypes = {
+  children: PropTypes.node,
   spacing: PropTypes.number,
   wrap: PropTypes.bool,
   direction: PropTypes.oneOf(["row", "column"]),

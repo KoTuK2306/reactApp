@@ -10,7 +10,7 @@ export default {
 
 const Template = ({ numberOfChildren, ...args }) => (
   <Stack {...args}>
-    {[...Array(numberOfChildren).keys()].map((n) => (
+    {[...Array(numberOfChildren)].map(() => (
       <div
         style={{
           width: "50px",
@@ -21,7 +21,7 @@ const Template = ({ numberOfChildren, ...args }) => (
           alignItems: "center",
         }}
       >
-        {n + 1}
+        div
       </div>
     ))}
   </Stack>

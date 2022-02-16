@@ -20,7 +20,7 @@ export const Button = ({ children, backgroundColor = "red", size = "md", onClick
 };
 
 Button.propTypes = {
-  children: PropTypes.any.isRequired,
+  children: PropTypes.node.isRequired,
   backgroundColor: PropTypes.string,
   size: PropTypes.oneOf(["sm", "md", "lg"]),
   onClick: PropTypes.func.isRequired,
