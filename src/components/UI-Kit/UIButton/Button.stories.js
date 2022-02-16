@@ -7,16 +7,11 @@ export default {
 
 const Template = (args) => <Button {...args} />;
 
-export const Red = Template.bind({});
-Red.args = {
-  backgroundColor: "red",
-  children: "Button",
-  size: "md",
-};
-
 export const Purple = Template.bind({});
 Purple.args = {
-  backgroundColor: "purple",
+  backgroundColor: "#c300ff",
   children: "Button",
   size: "md",
+  variant: "standart",
+  textColor: "black",
 };
