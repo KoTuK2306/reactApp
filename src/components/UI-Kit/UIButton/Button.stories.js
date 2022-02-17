@@ -13,5 +13,5 @@ Purple.args = {
   children: "Button",
   size: "md",
   variant: "standart",
-  textColor: "black",
+  textColor: "#d4d4d4",
 };
