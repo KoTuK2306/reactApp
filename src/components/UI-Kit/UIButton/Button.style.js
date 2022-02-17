@@ -1,28 +1,34 @@
 import styled from "styled-components";
 import { darken, rgba, lighten } from "polished";
 
+const transformBoxShadowColor = (func, color, coefficient = 0.2, sizeOfShadow = 40) => {
+  return `0 0 ${sizeOfShadow}px ${sizeOfShadow}px ${func(coefficient, color)} inset`;
+};
+
+const isBorderedOrText = (variant) => {
+  if (variant === "bordered" || variant === "text") return variant === "bordered" || variant === "text";
+};
+
 export const StyledButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
   border: ${(props) =>
     props.variant === "text" || props.variant === "standart" ? "none" : `1px solid ${props.backgroundColor}`};
-  background-color: ${(props) =>
-    props.variant === "bordered" || props.variant === "text" ? `${rgba("#fff", 0)}` : props.backgroundColor};
+  background-color: ${(props) => (isBorderedOrText(props.variant) ? `${rgba("#fff", 0)}` : props.backgroundColor)};
   padding: ${(props) => props.size};
   color: ${(props) => props.textColor};
-  transition: ${(props) =>
-    props.variant === "bordered" || props.variant === "text" ? "all 0.3s ease-in-out" : "all 0.3s"};
+  transition: ${(props) => (isBorderedOrText(props.variant) ? "all 0.3s ease-in-out" : "all 0.3s")};
 
   &:hover {
     box-shadow: ${(props) =>
-      props.variant === "bordered" || props.variant === "text"
-        ? `0 0 40px 40px ${props.backgroundColor} inset`
-        : `0 0 40px 40px ${lighten(0.2, props.backgroundColor)} inset`};
+      isBorderedOrText(props.variant)
+        ? transformBoxShadowColor(darken, props.backgroundColor, 0)
+        : transformBoxShadowColor(lighten, props.backgroundColor)};
   }
   &:active {
     box-shadow: ${(props) =>
-      props.variant === "bordered" || props.variant === "text"
-        ? `0 0 40px 40px ${lighten(0.3, props.backgroundColor)} inset`
-        : `0 0 40px 40px ${darken(0.2, props.backgroundColor)} inset`};
+      isBorderedOrText(props.variant)
+        ? transformBoxShadowColor(lighten, props.backgroundColor)
+        : transformBoxShadowColor(darken, props.backgroundColor)};
   }
 `;
