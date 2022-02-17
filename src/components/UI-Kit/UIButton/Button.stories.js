@@ -15,6 +15,7 @@ export default {
 const Template = (args) => <Button {...args} />;
 
 export const purpleButton = Template.bind({});
+purpleButton.storyName = "Button";
 purpleButton.args = {
   children: "Button",
   size: "md",

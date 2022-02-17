@@ -29,6 +29,9 @@ export const Button = ({
 };
 
 Button.propTypes = {
+  /**
+   * Choose content for your button
+   */
   children: PropTypes.node.isRequired,
   /**
    * Choose color for your button
