@@ -28,9 +28,21 @@ export const Button = ({
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
+  /**
+   * Choose color for your button
+   */
   backgroundColor: PropTypes.string,
+  /**
+   * Choose size of your button
+   */
   size: PropTypes.oneOf(["sm", "md", "lg"]),
   onClick: PropTypes.func.isRequired,
+  /**
+   * Choose one of three variant of your button
+   */
   variant: PropTypes.oneOf(["standart", "bordered", "text"]),
+  /**
+   * Select the color of the text contained in the button
+   */
   textColor: PropTypes.string,
 };
