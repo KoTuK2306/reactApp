@@ -5,7 +5,7 @@ export const StyledButton = styled.button`
   border-radius: 5px;
   cursor: pointer;
   border: ${(props) =>
-    props.variant === "text" ? "none" : props.variant === "bordered" ? `1px solid ${props.backgroundColor}` : "none"};
+    props.variant === "text" || props.variant === "standart" ? "none" : `1px solid ${props.backgroundColor}`};
   background-color: ${(props) =>
     props.variant === "bordered" || props.variant === "text" ? `${rgba("#fff", 0)}` : props.backgroundColor};
   padding: ${(props) => props.size};
