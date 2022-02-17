@@ -1,7 +1,7 @@
 import { Stack } from "./index";
 
 export default {
-  title: "Components/Stack",
+  title: "Components/Layout/Stack",
   component: Stack,
   argTypes: {
     numberOfChildren: { type: "number", defaultValue: 4 },
