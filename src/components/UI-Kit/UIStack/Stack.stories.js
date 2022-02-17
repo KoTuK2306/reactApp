@@ -19,6 +19,7 @@ const Template = ({ numberOfChildren, ...args }) => (
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          borderRadius: "50px",
         }}
       >
         div
@@ -30,13 +31,6 @@ const Template = ({ numberOfChildren, ...args }) => (
 export const Horizontal = Template.bind({});
 Horizontal.args = {
   direction: "row",
-  spacing: 2,
-  wrap: false,
-};
-
-export const Vertical = Template.bind({});
-Vertical.args = {
-  direction: "column",
   spacing: 2,
   wrap: false,
 };
