@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { StyledStack } from "./Stack.style";
 
-export const Stack = ({ children, spacing = 2, direction = "row", wrap = false }) => {
+export const Stack = ({ children, spacing = 2, direction = "row", isWrap = false }) => {
   return (
-    <StyledStack spacing={spacing} direction={direction} wrap={wrap}>
+    <StyledStack spacing={spacing} direction={direction} isWrap={isWrap}>
       {children}
     </StyledStack>
   );
@@ -21,7 +21,7 @@ Stack.propTypes = {
   /**
    * Choose whether to transfer children to a new line or not
    */
-  wrap: PropTypes.bool,
+  isWrap: PropTypes.bool,
   /**
    * Choose how the children will be positioned. In a row or in a column
    */

@@ -32,5 +32,5 @@ Horizontal.storyName = "Stack";
 Horizontal.args = {
   direction: "row",
   spacing: 2,
-  wrap: false,
+  isWrap: false,
 };
