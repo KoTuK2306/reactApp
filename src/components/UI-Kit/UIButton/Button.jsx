@@ -8,6 +8,7 @@ export const Button = ({
   onClick,
   variant = "standart",
   textColor = "black",
+  radius = 5,
 }) => {
   let buttonSize = "0.5rem 1rem";
   if (size === "lg") buttonSize = `${1.5 * 0.5}rem ${1.5 * 1}rem`;
@@ -20,6 +21,7 @@ export const Button = ({
       onClick={onClick}
       variant={variant}
       textColor={textColor}
+      radius={radius}
     >
       {children}
     </StyledButton>
@@ -27,10 +29,29 @@ export const Button = ({
 };
 
 Button.propTypes = {
+  /**
+   * Choose content for your button
+   */
   children: PropTypes.node.isRequired,
+  /**
+   * Choose color for your button
+   */
   backgroundColor: PropTypes.string,
+  /**
+   * Choose size of your button
+   */
   size: PropTypes.oneOf(["sm", "md", "lg"]),
   onClick: PropTypes.func.isRequired,
+  /**
+   * Choose one of three variant of your button
+   */
   variant: PropTypes.oneOf(["standart", "bordered", "text"]),
+  /**
+   * Select the color of the text contained in the button
+   */
   textColor: PropTypes.string,
+  /**
+   * Configure radius of your button
+   */
+  radius: PropTypes.number,
 };

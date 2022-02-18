@@ -10,7 +10,8 @@ const isBorderedOrText = (variant) => {
 };
 
 export const StyledButton = styled.button`
-  border-radius: 5px;
+  border-radius: ${(props) => `${props.radius}px`};
+  font-weight: 700;
   cursor: pointer;
   border: ${(props) =>
     props.variant === "text" || props.variant === "standart" ? "none" : `1px solid ${props.backgroundColor}`};
