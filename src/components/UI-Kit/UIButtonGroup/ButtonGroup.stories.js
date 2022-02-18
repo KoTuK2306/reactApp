@@ -17,6 +17,9 @@ const Template = (args) => <ButtonGroup {...args} />;
 export const Group = Template.bind({});
 Group.storyName = "ButtonGroup";
 Group.args = {
-  children: ["one", "two"],
+  items: ["One", "Two", "Three"],
   backgroundColor: "purple",
+  size: "md",
+  textColor: "#d4d4d4",
+  variant: "standart",
 };

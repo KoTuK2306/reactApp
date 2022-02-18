@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { darken, rgba, lighten } from "polished";
 
-const transformBoxShadowColor = (func, color, coefficient = 0.2, sizeOfShadow = 40) => {
+export const transformBoxShadowColor = (func, color, coefficient = 0.2, sizeOfShadow = 40) => {
   return `0 0 ${sizeOfShadow}px ${sizeOfShadow}px ${func(coefficient, color)} inset`;
 };
 
-const isBorderedOrText = (variant) => {
+export const isBorderedOrText = (variant) => {
   if (variant === "bordered" || variant === "text") return variant === "bordered" || variant === "text";
 };
 
