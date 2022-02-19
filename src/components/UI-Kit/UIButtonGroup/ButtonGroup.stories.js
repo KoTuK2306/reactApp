@@ -1,4 +1,4 @@
-import { ButtonGroup } from "./index";
+import { ButtonGroup } from "./ButtonGroup";
 
 export default {
   title: "Components/Input/ButtonGroup",

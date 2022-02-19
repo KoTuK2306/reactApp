@@ -5,7 +5,7 @@ export default {
   title: "Components/Layout/Stack",
   component: Stack,
   argTypes: {
-    numberOfChildren: { type: { summary: "number" }, defaultValue: 4, description: "Number of children in your stack" },
+    numberOfChildren: { type: "number", defaultValue: 4, description: "Number of children in your stack" },
   },
 };
 

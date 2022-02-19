@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import { isBorderedOrText, transformBoxShadowColor } from "../UIButton/Button.style";
 import { darken, rgba, lighten } from "polished";
+import { isBorderedOrText, transformBoxShadowColor } from "../UIButton/Button.style";
 
-const leftRightBorder = (func, coefficient, color, size) => `${size}px solid ${func(coefficient, color)}`;
-const isStandartOrText = (variant) => {
-  if (variant === "standart" || variant === "text") return variant === "standart" || variant === "text";
-};
+const getBorderStyle = (func, coefficient, color, size) => `${size}px solid ${func(coefficient, color)}`;
+export const isStandartOrText = (variant) => variant === "standart" || variant === "text";
 
 export const StyledButtonForGroup = styled.button`
   min-width: 50px;
@@ -13,11 +11,11 @@ export const StyledButtonForGroup = styled.button`
   padding: ${(props) => props.buttonSize};
   font-weight: 700;
   border: ${(props) =>
-    isStandartOrText(props.variant) ? "none" : leftRightBorder(darken, 0.1, props.backgroundColor, 1)};
+    isStandartOrText(props.variant) ? "none" : getBorderStyle(darken, 0.1, props.backgroundColor, 1)};
 
-  border-left: ${(props) => leftRightBorder(darken, 0.1, props.backgroundColor, 0.5)};
+  border-left: ${(props) => getBorderStyle(darken, 0.1, props.backgroundColor, 0.5)};
 
-  border-right: ${(props) => leftRightBorder(darken, 0.1, props.backgroundColor, 0.5)};
+  border-right: ${(props) => getBorderStyle(darken, 0.1, props.backgroundColor, 0.5)};
 
   color: ${(props) => props.textColor};
   cursor: pointer;
@@ -38,12 +36,12 @@ export const StyledButtonForGroup = styled.button`
   }
   &:first-child {
     border-left: ${(props) =>
-      isStandartOrText(props.variant) ? "none" : leftRightBorder(darken, 0.1, props.backgroundColor, 1)};
+      isStandartOrText(props.variant) ? "none" : getBorderStyle(darken, 0.1, props.backgroundColor, 1)};
     border-radius: 10px 0 0 10px;
   }
   &:last-child {
     border-right: ${(props) =>
-      isStandartOrText(props.variant) ? "none" : leftRightBorder(darken, 0.1, props.backgroundColor, 1)};
+      isStandartOrText(props.variant) ? "none" : getBorderStyle(darken, 0.1, props.backgroundColor, 1)};
     border-radius: 0 10px 10px 0;
   }
 `;
