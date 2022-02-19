@@ -1,2 +1,3 @@
-export { Button } from "./UIButton/index";
-export { Stack } from "./UIStack/index";
+export { Button } from "./UIButton";
+export { Stack } from "./UIStack";
+export { ButtonGroup } from "./UIButtonGroup";
