@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledLabel = styled.label`
-  color: #aaa;
+  color: ${(props) => props.textColor};
   cursor: pointer;
   user-select: none;
 `;
@@ -23,7 +23,7 @@ export const StyledCheckbox = styled.input`
     content: "";
     width: 80px;
     height: 40px;
-    background-color: #ddd;
+    background-color: ${(props) => props.checkboxBackground};
     border-radius: 20px;
     margin-right: 15px;
   }
@@ -34,14 +34,13 @@ export const StyledCheckbox = styled.input`
     content: "";
     width: 35px;
     height: 35px;
-    background-color: grey;
+    background-color: ${(props) => props.uncheckedCheckbox};
     border-radius: 20px;
     transition: all 0.5s;
   }
 
   &:checked + label::after {
     left: 43px;
-    transform: translateX(0%);
-    background-color: purple;
+    background-color: ${(props) => props.checkedCheckbox};
   }
 `;
