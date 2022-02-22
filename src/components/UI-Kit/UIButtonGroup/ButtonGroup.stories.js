@@ -1,7 +1,7 @@
 import { ButtonGroup } from "./ButtonGroup";
 
 export default {
-  title: "Components/Input/ButtonGroup",
+  title: "Components/Input/Button Group",
   component: ButtonGroup,
   argTypes: {
     backgroundColor: { control: "color" },
@@ -15,7 +15,7 @@ export default {
 const Template = (args) => <ButtonGroup {...args} />;
 
 export const Group = Template.bind({});
-Group.storyName = "ButtonGroup";
+Group.storyName = "Button Group";
 Group.args = {
   items: ["One", "Two", "Three"],
   backgroundColor: "purple",
