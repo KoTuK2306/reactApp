@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { StyledLabel, StyledCheckbox } from "./SwitchableCheckbox.style";
+import { StyledLabel, StyledCheckbox, StyledDiv, Background, Circle } from "./SwitchableCheckbox.style";
 
 export const SwitchableCheckbox = ({
   text,
@@ -7,20 +7,21 @@ export const SwitchableCheckbox = ({
   checkedCheckbox = "#7309AA",
   uncheckedCheckbox = "#7E7E7E",
   checkboxBackground = "#ddd",
+  size = "md",
 }) => {
+  let scale = 1;
+  if (size === "sm") scale = 0.5;
+  if (size === "lg") scale = 1.75;
+
   return (
-    <>
-      <StyledCheckbox
-        type="checkbox"
-        id={`check${text}`}
-        checkedCheckbox={checkedCheckbox}
-        uncheckedCheckbox={uncheckedCheckbox}
-        checkboxBackground={checkboxBackground}
-      ></StyledCheckbox>
-      <StyledLabel for={`check${text}`} textColor={textColor}>
+    <StyledDiv>
+      <StyledLabel scale={scale} textColor={textColor}>
+        <Background checkboxBackground={checkboxBackground} scale={scale} />
+        <StyledCheckbox checkedCheckbox={checkedCheckbox} scale={scale} type="checkbox" />
+        <Circle uncheckedCheckbox={uncheckedCheckbox} scale={scale} />
         {text}
       </StyledLabel>
-    </>
+    </StyledDiv>
   );
 };
 
@@ -45,4 +46,8 @@ SwitchableCheckbox.propTypes = {
    * Choose color for checkbox background
    */
   checkboxBackground: PropTypes.string,
+  /**
+   * Choose size of your switchable checkbox
+   */
+  size: PropTypes.oneOf(["sm", "md", "lg"]),
 };
