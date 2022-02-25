@@ -23,4 +23,5 @@ Checkbox.args = {
   checkedCheckbox: "#7309AA",
   uncheckedCheckbox: "#7E7E7E",
   checkboxBackground: "#ddd",
+  size: "md",
 };
