@@ -8,7 +8,7 @@ export const transformBoxShadowColor = (func, color, coefficient = 0.2, sizeOfSh
 export const isBorderedOrText = (variant) => variant === "bordered" || variant === "text";
 
 export const StyledButton = styled.button`
-  border-radius: ${(props) => `${props.radius}px`};
+  border-radius: ${(props) => `${props.buttonHeight * 2}rem`};
   font-weight: 700;
   cursor: pointer;
   border: ${(props) => (isStandartOrText(props.variant) ? "none" : `1px solid ${props.backgroundColor}`)};

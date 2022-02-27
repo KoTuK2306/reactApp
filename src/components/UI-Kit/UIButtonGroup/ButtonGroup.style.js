@@ -37,11 +37,11 @@ export const StyledButtonForGroup = styled.button`
   &:first-child {
     border-left: ${(props) =>
       isStandartOrText(props.variant) ? "none" : getBorderStyle(darken, 0.1, props.backgroundColor, 1)};
-    border-radius: 10px 0 0 10px;
+    border-radius: ${(props) => `${props.buttonHeight * 2}rem 0 0 ${props.buttonHeight * 2}rem`};
   }
   &:last-child {
     border-right: ${(props) =>
       isStandartOrText(props.variant) ? "none" : getBorderStyle(darken, 0.1, props.backgroundColor, 1)};
-    border-radius: 0 10px 10px 0;
+    border-radius: ${(props) => `0 ${props.buttonHeight * 2}rem ${props.buttonHeight * 2}rem 0`};
   }
 `;
