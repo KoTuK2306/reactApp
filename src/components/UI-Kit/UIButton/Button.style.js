@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { darken, rgba, lighten } from "polished";
 import { isStandartOrText } from "../UIButtonGroup/ButtonGroup.style";
-
-export const numberForRoundFrame = 2;
+import { numberForRoundFrame } from "../../constants";
 
 export const transformBoxShadowColor = (func, color, coefficient = 0.2, sizeOfShadow = 40) =>
   `0 0 ${sizeOfShadow}px ${sizeOfShadow}px ${func(coefficient, color)} inset`;
