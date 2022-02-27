@@ -1,1 +1,1 @@
-export { numberForRoundFrame } from "./constants";
+export { radiusRatio } from "./constants";

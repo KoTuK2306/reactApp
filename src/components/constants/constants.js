@@ -1,1 +1,1 @@
-export const numberForRoundFrame = 2;
+export const radiusRatio = 2;
