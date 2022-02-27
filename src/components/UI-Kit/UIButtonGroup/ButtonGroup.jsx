@@ -10,8 +10,15 @@ export const ButtonGroup = ({
   onClick,
 }) => {
   let buttonSize = "0.5rem 1rem";
-  if (size === "lg") buttonSize = `${1.5 * 0.5}rem ${1.5 * 1}rem`;
-  if (size === "sm") buttonSize = `${0.75 * 0.5}rem ${0.75 * 1}rem`;
+  let buttonHeight = "0.5";
+  if (size === "lg") {
+    buttonSize = `${1.5 * 0.5}rem ${1.5 * 1}rem`;
+    buttonHeight = buttonHeight * 1.5;
+  }
+  if (size === "sm") {
+    buttonSize = `${0.75 * 0.5}rem ${0.75 * 1}rem`;
+    buttonHeight = buttonHeight * 0.75;
+  }
   return (
     <>
       {items.map((item) => (
@@ -21,6 +28,7 @@ export const ButtonGroup = ({
           buttonSize={buttonSize}
           variant={variant}
           onClick={onClick}
+          buttonHeight={buttonHeight}
         >
           {item}
         </StyledButtonForGroup>

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { darken, rgba, lighten } from "polished";
 import { isBorderedOrText, transformBoxShadowColor } from "../UIButton/Button.style";
+import { radiusRatio } from "../../constants";
 
 const getBorderStyle = (func, coefficient, color, size) => `${size}px solid ${func(coefficient, color)}`;
 export const isStandartOrText = (variant) => variant === "standart" || variant === "text";
@@ -37,11 +38,11 @@ export const StyledButtonForGroup = styled.button`
   &:first-child {
     border-left: ${(props) =>
       isStandartOrText(props.variant) ? "none" : getBorderStyle(darken, 0.1, props.backgroundColor, 1)};
-    border-radius: 10px 0 0 10px;
+    border-radius: ${(props) => `${props.buttonHeight * radiusRatio}rem 0 0 ${props.buttonHeight * radiusRatio}rem`};
   }
   &:last-child {
     border-right: ${(props) =>
       isStandartOrText(props.variant) ? "none" : getBorderStyle(darken, 0.1, props.backgroundColor, 1)};
-    border-radius: 0 10px 10px 0;
+    border-radius: ${(props) => `0 ${props.buttonHeight * radiusRatio}rem ${props.buttonHeight * radiusRatio}rem 0`};
   }
 `;
