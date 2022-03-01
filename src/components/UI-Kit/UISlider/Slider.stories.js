@@ -4,9 +4,8 @@ export default {
   title: "Components/Input/Slider",
   component: Slider,
   argTypes: {
-    backgroundColor: { control: "color" },
-    primarySliderColor: { control: "color" },
-    secondarySliderColor: { control: "color" },
+    firstSliderColor: { control: "color" },
+    secondSliderColor: { control: "color" },
   },
   parameters: {
     layout: "centered",
@@ -18,7 +17,7 @@ const Template = (args) => <Slider {...args} />;
 export const purpleSlider = Template.bind({});
 purpleSlider.storyName = "Slider";
 purpleSlider.args = {
-  backgroundColor: "#d3d3d3",
-  primarySliderColor: "#c3b1e1",
-  secondarySliderColor: "#d6d6d6",
+  firstSliderColor: "#c3b1e1",
+  secondSliderColor: "#d6d6d6",
+  size: "md",
 };

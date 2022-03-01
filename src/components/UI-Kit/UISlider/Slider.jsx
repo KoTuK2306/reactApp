@@ -1,30 +1,32 @@
-/* eslint-disable react/jsx-no-duplicate-props */
-import React, { useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import { SliderWrapper, StyledSlider } from "./Slider.style";
 
 export const Slider = ({
-  backgroundColor = "#d3d3d3",
   min = 0,
   max = 100,
-  primarySliderColor = "#c3b1e1",
-  secondarySliderColor = "#d6d6d6",
+  firstSliderColor = "#c3b1e1",
+  secondSliderColor = "#d6d6d6",
+  size = "md",
+  step = 1,
 }) => {
-  const [num, setNum] = useState(50);
-  const hundleChange = (event) => setNum(event.target.value);
-
+  const [rangeRatio, setRangeRatio] = useState(50);
+  const handleChange = (event) => setRangeRatio(event.target.value);
+  let rangeSizeRatio = 1;
+  if (size === "sm") rangeSizeRatio = 0.75;
+  if (size === "lg") rangeSizeRatio = 2;
   return (
     <SliderWrapper>
       <StyledSlider
-        onChange={hundleChange}
-        backgroundColor={backgroundColor}
-        primarySliderColor={primarySliderColor}
-        secondarySliderColor={secondarySliderColor}
+        onChange={handleChange}
+        firstSliderColor={firstSliderColor}
+        secondSliderColor={secondSliderColor}
         type="range"
         min={min}
         max={max}
-        step={1}
-        value={num}
+        step={step}
+        size={rangeSizeRatio}
+        value={rangeRatio}
       />
     </SliderWrapper>
   );
@@ -32,9 +34,17 @@ export const Slider = ({
 
 Slider.propTypes = {
   /**
-   * Choose background сolor for your slider
+   * Choose first color for your slider
    */
-  backgroundColor: PropTypes.string,
+  firstSliderColor: PropTypes.string,
+  /**
+   * Choose second color for your slider
+   */
+  secondSliderColor: PropTypes.string,
+  /**
+   * Choose size for your range
+   */
+  size: PropTypes.oneOf(["sm", "md", "lg"]),
   /**
    * Choose min value for your slider
    */
@@ -44,11 +54,7 @@ Slider.propTypes = {
    */
   max: PropTypes.number,
   /**
-   * Choose primary color for your slider
+   * Choose step for your slider
    */
-  primarySliderColor: PropTypes.string,
-  /**
-   * Choose secondary color for your slider
-   */
-  secondarySliderColor: PropTypes.string,
+  step: PropTypes.number,
 };
