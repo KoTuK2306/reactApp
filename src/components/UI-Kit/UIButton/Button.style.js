@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { darken, rgba, lighten } from "polished";
 import { isStandartOrText } from "../UIButtonGroup/ButtonGroup.style";
-import { RADIUS_RATIO } from "../../constants";
+import { RADIUS_RATIO } from "../../../constants";
 
 export const transformBoxShadowColor = (func, color, coefficient = 0.2, sizeOfShadow = 40) =>
   `0 0 ${sizeOfShadow}px ${sizeOfShadow}px ${func(coefficient, color)} inset`;

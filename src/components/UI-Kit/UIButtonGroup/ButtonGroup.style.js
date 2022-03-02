@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { darken, rgba, lighten } from "polished";
 import { isBorderedOrText, transformBoxShadowColor } from "../UIButton/Button.style";
-import { RADIUS_RATIO } from "../../constants";
+import { RADIUS_RATIO } from "../../../constants";
 
 const getBorderStyle = (func, coefficient, color, size) => `${size}px solid ${func(coefficient, color)}`;
 export const isStandartOrText = (variant) => variant === "standart" || variant === "text";

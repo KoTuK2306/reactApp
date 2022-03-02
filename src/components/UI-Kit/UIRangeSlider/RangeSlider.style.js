@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { rgba } from "polished";
-import { SLIDER_HEIGHT } from "../../constants";
+import { SLIDER_HEIGHT } from "../../../constants";
 
 export const SliderWrapper = styled.div`
   width: 100%;
