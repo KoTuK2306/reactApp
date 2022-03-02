@@ -1,8 +1,8 @@
-import { Slider } from "./Slider";
+import { RangeSlider } from "./RangeSlider";
 
 export default {
   title: "Components/Input/Slider",
-  component: Slider,
+  component: RangeSlider,
   argTypes: {
     firstSliderColor: { control: "color" },
     secondSliderColor: { control: "color" },
@@ -12,7 +12,7 @@ export default {
   },
 };
 
-const Template = (args) => <Slider {...args} />;
+const Template = (args) => <RangeSlider {...args} />;
 
 export const purpleSlider = Template.bind({});
 purpleSlider.storyName = "Slider";

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { SliderWrapper, StyledSlider } from "./Slider.style";
+import { SliderWrapper, StyledSlider } from "./RangeSlider.style";
 
-export const Slider = ({
+export const RangeSlider = ({
   min = 0,
   max = 100,
   firstSliderColor = "#c3b1e1",
@@ -32,7 +32,7 @@ export const Slider = ({
   );
 };
 
-Slider.propTypes = {
+RangeSlider.propTypes = {
   /**
    * Choose first color for your slider
    */

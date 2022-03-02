@@ -1,24 +1,35 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { rgba } from "polished";
+import { SLIDER_HEIGHT } from "../../constants";
 
 export const SliderWrapper = styled.div`
   width: 100%;
 `;
 
-const sliderHeight = 5;
 const mutateThumbSize = (size) => {
   const thumbSize = 20;
   return `${size * thumbSize}px`;
 };
 const calcRangePercent = (value, max) => {
-  return (value / max) * 100;
+  return Math.abs((value / max) * 100);
 };
+
+const thumbStyle = css`
+  width: ${(props) => mutateThumbSize(props.size)};
+  height: ${(props) => mutateThumbSize(props.size)};
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  transition: all 0.4s;
+`;
+const hoverThumbStyle = css`
+  box-shadow: ${`0 0 0px 5px ${rgba("#969696", 0.5)}`};
+`;
 
 export const StyledSlider = styled.input`
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 100%;
-  height: ${(props) => `${props.size * sliderHeight}px`};
+  height: ${(props) => `${props.size * SLIDER_HEIGHT}px`};
   outline: none;
   border-radius: 5px;
   background: ${(props) =>
@@ -30,26 +41,18 @@ export const StyledSlider = styled.input`
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: ${(props) => mutateThumbSize(props.size)};
-    height: ${(props) => mutateThumbSize(props.size)};
-    background-color: #f0f0f0;
-    border-radius: 50%;
-    transition: all 0.4s;
+    ${thumbStyle}
   }
-
   &::-moz-range-thumb {
     -moz-appearance: none;
-    width: ${(props) => mutateThumbSize(props.size)};
-    height: ${(props) => mutateThumbSize(props.size)};
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    transition: all 0.4s;
+    border: none;
+    ${thumbStyle}
   }
 
   &:hover::-webkit-slider-thumb {
-    box-shadow: ${`0 0 0px 5px ${rgba("#969696", 0.5)}`};
+    ${hoverThumbStyle}
   }
   &:hover::-moz-range-thumb {
-    box-shadow: ${`0 0 0px 5px ${rgba("#969696", 0.5)}`};
+    ${hoverThumbStyle}
   }
 `;
