@@ -1,5 +1,7 @@
 import styled, { keyframes } from "styled-components";
-import { BORDER_WEIGHT, LOGO_SIZE } from "../../../constants/style";
+
+const BORDER_WEIGHT = 16;
+const SPINNER_SIZE = 120;
 
 const mutateBorder = (sizeRatio, color) => `${BORDER_WEIGHT * sizeRatio}px solid ${color}`;
 
@@ -16,7 +18,7 @@ export const StyledDiv = styled.div`
   border: ${(props) => mutateBorder(props.sizeRatio, props.primaryBorderColor)};
   border-top: ${(props) => mutateBorder(props.sizeRatio, props.secondaryBorderColor)};
   border-radius: 50%;
-  width: ${(props) => `${LOGO_SIZE * props.sizeRatio}px`};
-  height: ${(props) => `${LOGO_SIZE * props.sizeRatio}px`};
+  width: ${(props) => `${SPINNER_SIZE * props.sizeRatio}px`};
+  height: ${(props) => `${SPINNER_SIZE * props.sizeRatio}px`};
   animation: ${rotate} 2s linear infinite;
 `;
