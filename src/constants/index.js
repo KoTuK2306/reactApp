@@ -1,1 +1,1 @@
-export { RADIUS_RATIO, SLIDER_HEIGHT } from "./style";
+export { RADIUS_RATIO } from "./style";
